@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validador de Senhas - Teoria de Linguagens</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Validador de Senhas</h1>
+    <p class="sub">Além da Senha: Validação e Segurança Digital</p>
+
+    <label for="senha">Digite uma senha de teste</label>
+    <div class="campo">
+      <input type="password" id="senha" autocomplete="off" spellcheck="false">
+      <button type="button" id="mostrar">Mostrar</button>
+    </div>
+    <p class="contador"><span id="contador">0</span> caracteres</p>
+
+    <ul id="requisitos" class="lista">
+      <li data-req="tamanho">Entre 8 e 20 caracteres</li>
+      <li data-req="maiuscula">Pelo menos 1 letra maiúscula (A-Z)</li>
+      <li data-req="minuscula">Pelo menos 1 letra minúscula (a-z)</li>
+      <li data-req="numero">Pelo menos 1 número (0-9)</li>
+      <li data-req="simbolo">Pelo menos 1 símbolo (! @ # $ % &amp; *)</li>
+      <li data-req="alfabeto">Somente caracteres do alfabeto (sem espaços, acentos ou outros símbolos)</li>
+    </ul>
+
+    <div id="resultado" class="resultado neutro">Digite uma senha para validar.</div>
+    <p id="detalhe" class="detalhe"></p>
+
+    <section class="aviso">
+      <strong>Atenção:</strong> passar na validação não significa que a senha é segura.
+      <code>Senha123!</code> é aceita, mas é previsível. <code>vT8!pQ4#zL</code> também é aceita
+      e é muito mais difícil de adivinhar.
+    </section>
+
+    <details>
+      <summary>Expressão regular utilizada</summary>
+      <code id="regex-texto"></code>
+    </details>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
